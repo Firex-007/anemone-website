@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Anemone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00ccff;
+            --secondary-color: #00ff99;
+            --glass: rgba(0, 30, 50, 0.8);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #000;
+            color: white;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        #hero-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 30, 50, 0.85);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(100, 200, 255, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .content-section {
+            position: relative;
+            z-index: 2;
+            padding: 150px 20px 80px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 200, 255, 0.2);
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin: 40px 0 20px;
+            font-size: 2rem;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 20px;
+        }
+
+        p {
+            line-height: 1.9;
+            color: rgba(200, 230, 255, 0.95);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid rgba(0, 255, 153, 0.1);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .stat-box h3 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 30px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .back-home:hover {
+            background: var(--primary-color);
+            color: #000;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="hero-canvas"></canvas>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><i class="fas fa-wind"></i> Anemone</a>
+        </div>
+    </nav>
+    <main class="content-section">
+        <div class="glass-panel">
+            <h1>Our Story</h1>
+            <p class="tagline">Floating Innovation, Anchored in Excellence.</p>
+
+            <p>Founded at the intersection of biological beauty and technological precision, Anemone emerged with a
+                singular vision: to create digital experiences that feel as alive as the ocean itself.</p>
+
+            <h2>The Vision</h2>
+            <p>We don't just build websites or applications; we engineer ecosystems. Like the anemone that provides
+                shelter and life in the deep blue, our solutions are designed to be resilient, adaptive, and essential
+                for our clients' success.</p>
+
+            <h2>Methodology</h2>
+            <p>Our "Living Design" approach combines cutting-edge 3D graphics, artificial intelligence, and
+                human-centric UI to ensure your digital presence isn't just a static page, but a dynamic extension of
+                your brand's soul.</p>
+
+            <div class="stats-row">
+                <div class="stat-box">
+                    <h3>2024</h3>
+                    <p>Established</p>
+                </div>
+                <div class="stat-box">
+                    <h3>6+</h3>
+                    <p>Visionaries</p>
+                </div>
+                <div class="stat-box">
+                    <h3>∞</h3>
+                    <p>Innovation</p>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Experience the Deep</a>
+        </div>
+    </main>
+    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/Pass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/MaskPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+    <script src="three-scene.js"></script>
+</body>
+
+</html>

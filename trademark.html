@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trademark Notice | Anemone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00ccff;
+            --secondary-color: #00ff99;
+            --glass: rgba(0, 30, 50, 0.8);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #000;
+            color: white;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        #hero-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 30, 50, 0.85);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(100, 200, 255, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .content-section {
+            position: relative;
+            z-index: 2;
+            padding: 150px 20px 80px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 200, 255, 0.2);
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin: 30px 0 15px;
+            font-size: 1.5rem;
+        }
+
+        p {
+            line-height: 1.8;
+            color: rgba(200, 230, 255, 0.9);
+            margin-bottom: 20px;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 40px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .back-home:hover {
+            transform: translateX(-5px);
+            filter: brightness(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="hero-canvas"></canvas>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><i class="fas fa-wind"></i> Anemone</a>
+        </div>
+    </nav>
+    <main class="content-section">
+        <div class="glass-panel">
+            <h1>Trademark Notice</h1>
+            <p>Last Updated: February 9, 2026</p>
+
+            <h2>1. Core Trademarks</h2>
+            <p><strong>Anemone™</strong>, the Anemone logo, and the slogan "Floating Innovation, Anchored in Excellence"
+                are trademarks of Anemone Pvt Ltd.</p>
+
+            <h2>2. Visual Assets</h2>
+            <p>The "Living Ocean" simulation, including its unique shaders, biological entity designs (Jellyfish, Angler
+                Fish), and interactive 3D environment, are proprietary assets protected by intellectual property laws.
+            </p>
+
+            <h2>3. Third-Party Marks</h2>
+            <p>All other trademarks, service marks, and logos used on this site are the property of their respective
+                owners. Their use does not imply endorsement by or affiliation with Anemone.</p>
+
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Return to Depth</a>
+        </div>
+    </main>
+    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/Pass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/MaskPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+    <script src="three-scene.js"></script>
+</body>
+
+</html>

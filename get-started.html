@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started | Anemone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00ccff;
+            --secondary-color: #00ff99;
+            --bg-dark: #00101a;
+            --glass: rgba(0, 40, 60, 0.7);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #000;
+            color: white;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        #hero-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 30, 50, 0.85);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(100, 200, 255, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .main-content {
+            position: relative;
+            z-index: 2;
+            padding-top: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 200, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-container h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .form-container p {
+            color: rgba(200, 230, 255, 0.8);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 200, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            font-family: inherit;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary-color);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 153, 0.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            border-radius: 50px;
+            color: #001520;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 200, 255, 0.4);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: rgba(200, 230, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="hero-canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-wind"></i> Anemone
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="form-container">
+            <h1>Start Your Journey</h1>
+            <p>Tell us about your vision, and let's float toward excellence together.</p>
+
+            <form id="get-started-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Interest</label>
+                    <select required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="ai">AI & Machine Learning</option>
+                        <option value="web">Web Development</option>
+                        <option value="mobile">Mobile Apps</option>
+                        <option value="analytics">Business Analytics</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tell us more</label>
+                    <textarea rows="4" placeholder="How can we help you?"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
+
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/Pass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/MaskPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+
+    <script src="three-scene.js"></script>
+
+    <script>
+        // Inline page logic
+        document.getElementById('get-started-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.textContent;
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert('Thank you! Our visionaries will contact you shortly.');
+                btn.textContent = originalText;
+                btn.disabled = false;
+                e.target.reset();
+            }, 1500);
+        });
+
+        // Initialize Three.js background for this page
+        // (Note: three-scene.js handles the heavy lifting, we just trigger init)
+        // Since we are not scrolling for depth here, we might want to lock it or simulate some depth.
+        window.addEventListener('scroll', () => {
+            // Simulate some depth change for effect or leave at surface
+        });
+    </script>
+</body>
+
+</html>
